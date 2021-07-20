@@ -1,7 +1,5 @@
 package com.xiu.zk.client;
 
-import org.apache.curator.framework.recipes.cache.CuratorCache;
-
 /**
  * curator
  *
