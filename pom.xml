@@ -11,6 +11,7 @@
     <modules>
         <module>xiu-zk</module>
         <module>xiu-deploy</module>
+        <module>xiu-redis</module>
     </modules>
 
     <properties>
