@@ -23,6 +23,9 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+zk1/
+zk2/
+zk3/
 
 ### Mac ###
 .DS_Store
