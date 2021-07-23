@@ -23,10 +23,10 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
-zk1/
-zk2/
-zk3/
 
 ### Mac ###
 .DS_Store
 *.DS_Store
+/xiu-deploy/src/main/resources/zk/zk3/
+/xiu-deploy/src/main/resources/zk/zk2/
+/xiu-deploy/src/main/resources/zk/zk1/
