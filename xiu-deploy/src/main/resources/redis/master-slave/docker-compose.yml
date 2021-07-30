@@ -1,35 +1,43 @@
-version: '3'
+version: '3.6'
 
 networks:
-  redis-net:
-    name: redis-net
+  zk-net:
+    name: zk-net
 
 services:
   master:
     image: redis
-    hostname: redis-master
     container_name: redis-master
-    command: /bin/bash -c "redis-server /etc/redis/redis.conf"
-    volumes:
-      - ./master/conf:/etc/redis
-      - ./master/data:/data
-      - ./master/log:/log
+    restart: always
+    command: redis-server --port 6379  --appendonly yes
     ports:
       - 6380:6379
-    networks:
-      - redis-net
-
-  follower:
-    image: redis
-    hostname: redis-follower
-    container_name: redis-follower
-    command: /bin/bash -c "redis-server /etc/redis/redis.conf"
     volumes:
-      - ./follower/conf:/etc/redis
-      - ./follower/data:/data
-      - ./follower/log:/log
+      - ./master/data:/data
+    networks:
+      - zk-net
+
+  slave1:
+    image: redis
+    container_name: redis-slave-1
+    restart: always
+    command: redis-server --slaveof master 6379 --port 6379  --appendonly yes
     ports:
       - 6381:6379
+    volumes:
+      - ./slave1/data:/data
     networks:
-      - redis-net
+      - zk-net
 
+
+  slave2:
+    image: redis
+    container_name: redis-slave-2
+    restart: always
+    command: redis-server --slaveof master 6379 --port 6379  --appendonly yes
+    ports:
+      - 6382:6379
+    volumes:
+      - ./slave2/data:/data
+    networks:
+      - zk-net
