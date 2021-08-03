@@ -1,0 +1,38 @@
+version: "3.9"
+
+networks:
+  mysql-net:
+    name: mysql-net
+
+services:
+  db_master:
+    image: mysql:8.0.13
+    container_name: db_master
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+    restart: always
+    ports:
+      - "3316:3306"
+    volumes:
+      - ./master/conf:/etc/mysql
+      - ./master/data:/var/lib/mysql
+      - ./master/mysql-files:/var/lib/mysql-files
+    links:
+      - db_slaver1
+    networks:
+      - mysql-net
+
+  db_slaver1:
+    image: mysql:8.0.13
+    container_name: db_slaver1
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+    restart: always
+    ports:
+      - "3326:3306"
+    volumes:
+      - ./slave1/conf:/etc/mysql
+      - ./slave1/data:/var/lib/mysql
+      - ./slave1/mysql-files:/var/lib/mysql-files
+    networks:
+      - mysql-net
