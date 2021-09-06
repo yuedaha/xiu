@@ -12,6 +12,8 @@
         <module>xiu-zk</module>
         <module>xiu-deploy</module>
         <module>xiu-redis</module>
+        <module>xiu-java</module>
+        <module>xiu-spring</module>
     </modules>
 
     <properties>

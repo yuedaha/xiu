@@ -10,10 +10,10 @@
     </parent>
 
     <groupId>com.xiu</groupId>
-    <artifactId>xiu-redis</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <artifactId>xiu-java</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
-    <name>xiu-redis</name>
+    <name>xiu-java</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -27,11 +27,6 @@
             <artifactId>junit</artifactId>
             <version>4.11</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.redisson</groupId>
-            <artifactId>redisson</artifactId>
-            <version>3.16.1</version>
         </dependency>
     </dependencies>
 
