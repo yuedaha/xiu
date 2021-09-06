@@ -32,3 +32,7 @@ nbdist/
 /xiu-deploy/src/main/resources/zk/zk3/
 /xiu-deploy/src/main/resources/zk/zk2/
 /xiu-deploy/src/main/resources/zk/zk1/
+/xiu-deploy/src/main/resources/mysql/single-mysql/data/
+/xiu-deploy/src/main/resources/mysql/master-slave-mysql/slave2/data/
+/xiu-deploy/src/main/resources/mysql/master-slave-mysql/slave1/data/
+/xiu-deploy/src/main/resources/mysql/master-slave-mysql/master/data/
